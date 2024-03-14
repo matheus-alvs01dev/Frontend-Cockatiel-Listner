@@ -1,0 +1,102 @@
+$primary-color: #0f7501;
+$secondary-color: #fae8e8;
+$text-color: #0f2500;
+$font-size-h2: 32px;
+$font-size-label: 18px;
+$red-color: #a81010;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  .modal-body {
+    background-color: $secondary-color;
+    padding: 24px;
+    height: 60%;
+    width: 60%;
+    border-radius: 24px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    h2 {
+      font-size: $font-size-h2;
+      color: $text-color;
+    }
+
+    .input-container {
+      width: calc(100% - 24px);
+      
+
+
+      input,
+      select {
+        padding: 12px;
+        border: 2px solid $secondary-color;
+        color: $text-color;
+        font-size: 18px;
+        line-height: 24px;
+        border-radius: 12px;
+        width: calc(100% - 24px);
+        background-color: $secondary-color;
+        border: 2px solid gray;
+        margin-bottom: 12px;
+        background-color: white;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      label {
+        color: $text-color;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: $font-size-label;
+      }
+    }
+
+    .btn-secondary {
+      position: initial;
+      width: 100%;
+      margin-top: 32px;
+
+      &:hover {
+        background-color: $primary-color;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+
+.close-container{
+    position: absolute;
+    top: calc(0% - 24px);
+    right: calc(0% - 24px);
+    svg{
+        font-size: 4rem;
+        color: $red-color;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    svg:hover{
+        transform: scale(1.1);
+    }
+}
+
+
