@@ -1,3 +1,4 @@
+import { FaRegTrashAlt } from "react-icons/fa";
 import "./style.scss"
 
 interface CardProps {
@@ -6,6 +7,7 @@ interface CardProps {
   age: number;
   gender: string;
   mutation: string;
+  onclick?: () => void;
 }
 
 export default function Card({
@@ -14,9 +16,12 @@ export default function Card({
   age,
   gender,
   mutation,
+  onclick,
 }: CardProps) {
   return (
     <div className="card">
+      <button onClick={onclick} className="delete-btn"> <FaRegTrashAlt />
+</button>
       <img src={image} />
       <h2>{name}</h2>
       <span>

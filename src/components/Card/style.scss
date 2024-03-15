@@ -10,6 +10,30 @@
     padding: 0;
     background-color: whitesmoke;
     padding: 1rem;
+
+    .delete-btn{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: calc(0% - 2px);
+        right: calc(0% - 2px);
+        background-color: red;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1;
+    
+        svg:hover{
+            transform: scale(1.1);
+        }
+    
+    }
     
 
     img{
@@ -32,3 +56,5 @@
     }
 
 }
+
+

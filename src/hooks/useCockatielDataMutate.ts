@@ -21,6 +21,6 @@ export function useCockatielDataMutate() {
 
   return {
     ...query,
-    data: query.data?.data,
+    data: query.data?.data
   };
 }
