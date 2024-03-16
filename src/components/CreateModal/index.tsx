@@ -18,6 +18,7 @@ export default function CreateModal({ closeModal }: ModalProps) {
   const [mutation, setMutation] = useState("");
   const [age, setAge] = useState(0);
   const { mutate, isSuccess } = useCockatielDataMutate();
+  
 
   const submit = () => {
     const CockatielData = {
