@@ -1,16 +1,24 @@
 .bannerContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
+  align-items: self-end;
+  justify-content: flex-end;
+  width: 98vw;
   height: 20vw;
-  max-width: 1920px;
-  border-radius: 20px;
+  max-width: 920px;
   background: linear-gradient(0deg, rgba(3, 56, 14, 0.3), rgba(56, 52, 54, 0.3)),url("./banner.jpg");
-  background-position: center;
+  background-position: end;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 5rem;
+  margin: 1rem 0;
   padding: 0;
+  border-radius: 20px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  h1 {
+    color: #e2e2e2;
+    font-size: 3.2em;
+    line-height: 1.1;
+    padding: 1rem 4rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 }

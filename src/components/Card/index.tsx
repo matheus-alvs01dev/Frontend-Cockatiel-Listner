@@ -1,5 +1,7 @@
 import { FaRegTrashAlt } from "react-icons/fa";
-import "./style.scss"
+import "./style.scss";
+import { useState } from "react";
+import PutModal from "../PutModal";
 
 interface CardProps {
   name: string;
@@ -7,7 +9,9 @@ interface CardProps {
   age: number;
   gender: string;
   mutation: string;
-  onclick?: () => void;
+  handleDelete?: () => void;
+  onClickPut: () => void;
+  
 }
 
 export default function Card({
@@ -16,13 +20,17 @@ export default function Card({
   age,
   gender,
   mutation,
-  onclick,
+  handleDelete,
+  onClickPut
 }: CardProps) {
+  const [isPutModalOpen, setIsPutModalOpen] = useState(false);
+
   return (
     <div className="card">
-      <button onClick={onclick} className="delete-btn"> <FaRegTrashAlt />
-</button>
-      <img src={image} />
+        <button onClick={handleDelete} className="delete-btn">
+          <FaRegTrashAlt />
+        </button>
+      <img src={image} alt={name}/>
       <h2>{name}</h2>
       <span>
         <b>Age:</b>
@@ -36,6 +44,14 @@ export default function Card({
         <b>Mutation:</b>
         {mutation}
       </span>
+      {isPutModalOpen && (
+        <PutModal closePutModal={() => setIsPutModalOpen(false)} />)        
+      }
+      <button className="edit-btn" onClick={onClickPut} >
+
+          Edit
+        </button>
+        
     </div>
   );
 }

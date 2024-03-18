@@ -10,10 +10,17 @@
         color: #0f2500;
     }
 
+    content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .card-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 16px;
+        padding: 5rem 0;
     }
 
     button {

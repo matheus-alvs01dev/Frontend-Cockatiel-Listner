@@ -2,10 +2,10 @@ interface InputProps {
     label: string;
     value: string | number;
     updateValue(value: any): void;
-    required: boolean;
+    required?: boolean;
   }
 
-export const Input = ({ label, value, updateValue, required }: InputProps) => {
+export const Input = ({ label, value, updateValue, required = false }: InputProps) => {
     return (
       <div>
         <label>{label}</label>

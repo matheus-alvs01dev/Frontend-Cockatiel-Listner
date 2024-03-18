@@ -4,12 +4,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const usePut = (putCockatielData: CockatielData) : AxiosPromise<any>=> {
   const response = axios.put(
-    `http://localhost:8080/cockatiel/${putCockatielData.id}`
+    `http://localhost:8080/cockatiel`,
+    putCockatielData
   );
   return response;
 };
 
-export function useCockatielDelete() {
+export function useCockatielPut() {
   const queryClient = useQueryClient();
   const putCockatiel = useMutation({
     mutationFn: usePut,
