@@ -7,6 +7,7 @@ import { CockatielData } from "./interface/CockatielData";
 import { useCockatielDelete } from "./hooks/useCockatielDelete";
 import PostModal from "./components/PostModal";
 import PutModal from "./components/PutModal";
+import { ClipLoader } from "react-spinners";
 
 export default function App() {
   const { data, isLoading, isError } = useCockatielData();
@@ -51,7 +52,18 @@ export default function App() {
             </>
           )}
 
-          {isLoading && <p>Loading...</p>}
+          {isLoading && (
+            <>
+              {" "}
+              <ClipLoader
+                color={"#123abc"}
+                size={150}
+                style={{display: "flex", justifyContent: "center", alignItems: "center"}}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </>
+          )}
           {isError && <p>Something went wrong</p>}
         </div>
         <>

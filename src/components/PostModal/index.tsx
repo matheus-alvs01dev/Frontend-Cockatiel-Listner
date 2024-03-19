@@ -25,6 +25,7 @@ export default function PostModal({ closePostModal }: PostModalProps) {
     closePostModal();
   }, [isSuccess]);
 
+
   return (
     <CreateModal
       nameRequired={true}

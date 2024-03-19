@@ -7,6 +7,7 @@ interface PutModalProps {
   closePutModal(): void;
   cockatiel?: CockatielData;
 }
+
 export default function PutModal({ cockatiel, closePutModal }: PutModalProps) {
   const [formData, setFormData] = useState({
     id: "",
@@ -21,27 +22,33 @@ export default function PutModal({ cockatiel, closePutModal }: PutModalProps) {
 
   useEffect(() => {
     if (!cockatiel) return;
-    setFormData({
+    setFormData((prevData) => ({
+      ...prevData,
       id: cockatiel.id || "",
       name: cockatiel.name,
       image: cockatiel.image,
       gender: cockatiel.gender,
       mutation: cockatiel.mutation,
       age: cockatiel.age,
-    });
+    }));
   }, [cockatiel]);
 
   const handleSubmit = () => {
     putCockatiel.mutate(formData);
+    console.log("Cockatiel data:", formData);
     closePutModal();
   };
 
+
+
   return (
     <CreateModal
-      submit={handleSubmit}
+      submit={() => handleSubmit()}
       closeModal={closePutModal}
       formData={formData}
-      setFormData={setFormData}
+      setFormData={(data) =>
+        setFormData((prevData) => ({ ...prevData, ...data }))
+      }
       children="Edit Cockatiel"
     />
   );
