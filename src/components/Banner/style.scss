@@ -21,4 +21,21 @@
     padding: 1rem 4rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+  @media screen and (max-width: 768px) {
+    height: 30vw;
+    border-radius: 10px;
+    h1 {
+      font-size: 2em;
+      padding: 1rem 2rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 40vw;
+    h1 {
+      font-size: 1.5em;
+      padding: 0.5rem 1rem;
+    }
+  }
 }
+

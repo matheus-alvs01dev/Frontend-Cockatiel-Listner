@@ -1,40 +1,63 @@
 .homeContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  margin: 0;
+
+  p{
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    color: #0f2500;
+  }
+
+  h1 {
+    color: #0f2500;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+  }
+
+  content-container {
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
-    width: 100vw;
-    margin: 0;
+  }
 
-    h1 {
-        color: #0f2500;
-    }
-
-    content-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
-        padding: 5rem 0;
-    }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 3rem 0;
 
     button {
-        background-color: #0275d8;
-        color: white;
-        font-weight: bold;
-        position: fixed;
-        bottom: 16px;
-        right: 24px;
-        transition: all 0.1s linear 0.1s;
+      background-color: #0275d8;
+      color: white;
+      font-weight: bold;
+      position: fixed;
+      bottom: 16px;
+      right: 24px;
+      transition: all 0.1s linear 0.1s;
 
-        &:hover {
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
-            transform: scale(1.1);
-        }
+      &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
+        transform: scale(1.1);
+      }
     }
+
+    @media screen and (min-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+    }
+
+    @media screen and (min-width: 1200px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 5rem 0;
+      }
+    }
+  }
 }
