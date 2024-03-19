@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from "axios";
 import { CockatielData } from "../interface/CockatielData";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-const Api_URL = "http://localhost:8080";
+const Api_URL = 'https://backend-cockatiel-listner.onrender.com';
 
 const postData = async (data: CockatielData): AxiosPromise<any> => {
   const response = axios.post(Api_URL + "/cockatiel", data);

@@ -2,9 +2,11 @@ import axios, { AxiosPromise } from "axios";
 import { CockatielData } from "../interface/CockatielData";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+const Api_URL = 'https://backend-cockatiel-listner.onrender.com';
+
 const usePut = (putCockatielData: CockatielData) : AxiosPromise<any>=> {
   const response = axios.put(
-    `http://localhost:8080/cockatiel`,
+    Api_URL,
     putCockatielData
   );
   return response;

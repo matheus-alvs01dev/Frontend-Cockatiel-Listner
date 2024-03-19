@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from "axios"
 import { CockatielData } from "../interface/CockatielData";
 import { useQuery } from "@tanstack/react-query";
 
-const Api_URL = 'http://localhost:8080';
+const Api_URL = 'https://backend-cockatiel-listner.onrender.com';
 
 const fetchData = async (): AxiosPromise<CockatielData[]>=>{
     const response = axios.get(Api_URL + "/cockatiel")

@@ -2,9 +2,11 @@ import axios, { AxiosPromise } from "axios";
 import { CockatielData } from "../interface/CockatielData";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+const Api_URL = 'https://backend-cockatiel-listner.onrender.com';
+
 const useDelete = (deleteCockatielData: CockatielData) : AxiosPromise<any>=> {
   const response = axios.delete(
-    `http://localhost:8080/cockatiel/${deleteCockatielData.id}`
+    `${Api_URL}/cockatiel/${deleteCockatielData.id}`
   );
   return response;
 };
