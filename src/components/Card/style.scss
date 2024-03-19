@@ -36,7 +36,8 @@
         border-radius: 50%;
         width: 100%;
         max-width: 250px;
-        height: auto;
+        max-height: 250px;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -54,6 +55,7 @@
     }
 
     .edit-btn {
+        position: static;
         display: flex;
         justify-content: center;
         align-items: center;
